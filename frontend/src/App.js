@@ -7,7 +7,16 @@ import SignUpContainer from './containers/SignUpContainer';
 import DashboardContainer from './containers/DashboardContainer';
 import axios from 'axios';
 
-
+let PrivateRoute = ({component: Component, authed, ...rest}) => {
+  return (
+    <Route
+      {...rest}
+      render={(props) => authed === 1
+        ? <Component {...props} />
+        : <Redirect to={{pathname: '/signin', state: {from: props.location}}} />}
+    />
+  )
+}
 class App extends Component {
   state = {
     redirect: false,
@@ -29,6 +38,7 @@ class App extends Component {
     })
       .then((res) => {
         if (res.data.message === 'success') {
+          alert(res.data.result.type)
           const { token, type } = res.data.result;
           localStorage['jwt_token'] = token;
           this.setState({
@@ -60,8 +70,10 @@ class App extends Component {
       <div>
         <Router>
           <React.Fragment>
-            <MenuLayout user={this.state.user} />
-            <Route exact path="/admin" component={DashboardContainer} />
+            <MenuLayout user={this.state.user} isAdmin={this.state.isAdmin}/>
+    
+
+            <PrivateRoute authed={this.state.isAdmin} path='/admin' component={DashboardContainer} />
 
             <Route
               exact

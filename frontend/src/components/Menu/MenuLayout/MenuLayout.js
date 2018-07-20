@@ -40,6 +40,7 @@ class MenuLayout extends React.Component {
             
 {user ? (
   <li>
+    {isAdmin ? <li><Link to="/admin">dashboard</Link> </li>:null}
   <span style={{ marginLeft: 'auto' }}>
     <span>{user.id}</span>
     <Link to="/logout" className="authBtn">
