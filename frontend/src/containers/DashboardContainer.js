@@ -6,60 +6,33 @@ class SignUpContainer extends Component {
 render () {
     
     return (
-        <div id="wrapper">
-        <div id="page-wrapper" class="gray-bg sidebar-content">
-        <div class="row border-bottom">
-        <nav class="navbar navbar-static-top white-bg" role="navigation" style={{margiBottom: '0'}}>
-        <div class="navbar-header">
-            <a href="#" class="navbar-brand" style={{fontSize: '1.5em',lineHeight: '1.5em'}}>Adthon</a>
-            <form role="search" class="navbar-form-custom" action="search_results.html">
-                <div class="form-group">
-                    <input type="text" placeholder="검색..." class="form-control" name="top-search" id="top-search"/>
-                </div>
-            </form>
+        <div className="">
+        <div className="gray-bg">
+        <div className="row border-bottom">
+   
         </div>
-            <ul class="nav navbar-top-links navbar-right">
-                <li>
-                    <a href="#">
-                        <span>ADMIN</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span>USER NAME</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="login.html">
-                        <i class="fa fa-sign-out"></i> 로그아웃
-                    </a>
-                </li>
-            </ul>
+            <div className="wrapper wrapper-content">
+                                <div className="row">
 
-        </nav>
-        </div>
-            <div class="wrapper wrapper-content">
-                                <div class="row">
-
-                    <div class="col-lg-12">
-                        <div class="ibox float-e-margins">
-                            <div class="ibox-content">
-                                <h1 class="m-b-xs">광고 리스트</h1>
-                                <div class="row">
-                                    <div class="col-sm-9 m-b-xs">
-                                        <div data-toggle="buttons" class="btn-group">
-                                            <label class="btn btn-sm btn-white"> <input type="radio" id="option1" name="options"/> 일별 </label>
-                                            <label class="btn btn-sm btn-white active"> <input type="radio" id="option2" name="options"/> 주별 </label>
-                                            <label class="btn btn-sm btn-white"> <input type="radio" id="option3" name="options"/> 월별 </label>
+                    <div className="col-lg-12">
+                        <div className="ibox float-e-margins">
+                            <div className="ibox-content">
+                                <h1 className="m-b-xs">광고 리스트</h1>
+                                <div className="row">
+                                    <div className="col-sm-9 m-b-xs">
+                                        <div data-toggle="buttons" className="btn-group">
+                                            <label className="btn btn-sm btn-white"> <input type="radio" id="option1" name="options"/> 일별 </label>
+                                            <label className="btn btn-sm btn-white active"> <input type="radio" id="option2" name="options"/> 주별 </label>
+                                            <label className="btn btn-sm btn-white"> <input type="radio" id="option3" name="options"/> 월별 </label>
                                         </div>
                                     </div>
-                                    <div class="col-sm-3">
-                                        <div class="input-group"><input type="text" placeholder="광고명" class="input-sm form-control"/> <span class="input-group-btn">
-                                        <button type="button" class="btn btn-sm btn-primary"> 검색 </button> </span></div>
+                                    <div className="col-sm-3">
+                                        <div className="input-group"><input type="text" placeholder="광고명" className="input-sm form-control"/> <span className="input-group-btn">
+                                        <button type="button" className="btn btn-sm btn-primary"> 검색 </button> </span></div>
                                     </div>
                                 </div>
-                                <div class="table-responsive">
-                                    <table class="table table-striped">
+                                <div className="table-responsive">
+                                    <table className="table table-striped">
                                         <thead>
                                         <tr>
 
@@ -81,10 +54,10 @@ render () {
                                             <td>모빌리스트</td>
                                             <td>1213</td>
                                             <td>40</td>
-                                            <td><span class="pie">0.52/1.561</span></td>
+                                            <td><span className="pie">0.52/1.561</span></td>
                                             <td>20%</td>
                                             <td>Jul 14, 2013</td>
-                                            <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                                            <td><a href="#"><i className="fa fa-check text-navy"></i></a></td>
                                         </tr>
                                         <tr>
                                             <td>1</td>
@@ -92,10 +65,10 @@ render () {
                                             <td>모빌리스트</td>
                                             <td>1213</td>
                                             <td>40</td>
-                                            <td><span class="pie">0.52/1.561</span></td>
+                                            <td><span className="pie">0.52/1.561</span></td>
                                             <td>20%</td>
                                             <td>Jul 14, 2013</td>
-                                            <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                                            <td><a href="#"><i className="fa fa-check text-navy"></i></a></td>
                                         </tr>
                                         <tr>
                                             <td>1</td>
@@ -103,10 +76,10 @@ render () {
                                             <td>모빌리스트</td>
                                             <td>1213</td>
                                             <td>40</td>
-                                            <td><span class="pie">0.52/1.561</span></td>
+                                            <td><span className="pie">0.52/1.561</span></td>
                                             <td>20%</td>
                                             <td>Jul 14, 2013</td>
-                                            <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                                            <td><a href="#"><i className="fa fa-check text-navy"></i></a></td>
                                         </tr>
                                         <tr>
                                            <td>1</td>
@@ -114,10 +87,10 @@ render () {
                                             <td>모빌리스트</td>
                                             <td>1213</td>
                                             <td>40</td>
-                                            <td><span class="pie">0.52/1.561</span></td>
+                                            <td><span className="pie">0.52/1.561</span></td>
                                             <td>20%</td>
                                             <td>Jul 14, 2013</td>
-                                            <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                                            <td><a href="#"><i className="fa fa-check text-navy"></i></a></td>
                                         </tr>
                                         <tr>
                                             <td>1</td>
@@ -125,10 +98,10 @@ render () {
                                             <td>모빌리스트</td>
                                             <td>1213</td>
                                             <td>40</td>
-                                            <td><span class="pie">0.52/1.561</span></td>
+                                            <td><span className="pie">0.52/1.561</span></td>
                                             <td>20%</td>
                                             <td>Jul 14, 2013</td>
-                                            <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                                            <td><a href="#"><i className="fa fa-check text-navy"></i></a></td>
                                         </tr>
                                         <tr>
                                             <td>1</td>
@@ -136,10 +109,10 @@ render () {
                                             <td>모빌리스트</td>
                                             <td>1213</td>
                                             <td>40</td>
-                                            <td><span class="pie">0.52/1.561</span></td>
+                                            <td><span className="pie">0.52/1.561</span></td>
                                             <td>20%</td>
                                             <td>Jul 14, 2013</td>
-                                            <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                                            <td><a href="#"><i className="fa fa-check text-navy"></i></a></td>
                                         </tr>
                                        
                                         </tbody>
@@ -152,17 +125,17 @@ render () {
 
                 </div>
 
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="ibox float-e-margins">
-                            <div class="ibox-content">
+                <div className="row">
+                    <div className="col-lg-12">
+                        <div className="ibox float-e-margins">
+                            <div className="ibox-content">
                                     <div>
-                                        <span class="pull-right text-right">
+                                        <span className="pull-right text-right">
                                         <small>사용자 클릭 및 노출 이벤트 <strong></strong></small>
                                         </span>
-                                        <h1 class="m-b-xs">코코인 메인 배너</h1>
-                                        <small class="font-bold no-margins">
-                                             <i class="fa fa-clock-o"> </i>
+                                        <h1 className="m-b-xs">코코인 메인 배너</h1>
+                                        <small className="font-bold no-margins">
+                                             <i className="fa fa-clock-o"> </i>
                                         Update on 16.07.2018
                                         </small>
                                     </div>
@@ -177,8 +150,8 @@ render () {
 
 
             </div>
-        <div class="footer">
-            <div class="pull-right">
+        <div className="footer">
+            <div className="pull-right">
                 
             </div>
             <div>

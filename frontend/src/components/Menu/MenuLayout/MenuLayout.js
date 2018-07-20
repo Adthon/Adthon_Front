@@ -29,21 +29,51 @@ class MenuLayout extends React.Component {
   render () {
     const { user } = this.props;
     return (
-      <div className="MenuLayoutBox" style={{ top: this.state.top }}>
-        Logo
-        {user ? (
-          <span style={{ marginLeft: 'auto' }}>
-            <span>{user.id}</span>
-            <Link to="/logout" className="authBtn">
-              logout
-            </Link>
-          </span>
-        ) : (
-          <Link to="/signIn" className="authBtn">
-            login
-          </Link>
-        )}
-      </div>
+
+<div className="bodycontain_nav">
+<nav class="navbar navbar-static-top lognav" role="navigation" style={{marginBottom: 0}}>
+    <div class="navbar-header">
+        <a href="#" class="navbar-brand">Adthon</a>
+    </div>
+        <ul class="nav navbar-top-links navbar-right">
+            
+{user ? (
+  <li>
+  <span style={{ marginLeft: 'auto' }}>
+    <span>{user.id}</span>
+    <Link to="/logout" className="authBtn">
+      logout
+    </Link>
+  </span>
+  </li>
+) : (
+  <li>
+  <Link to="/signIn" className="authBtn">
+    login
+  </Link>
+  </li>
+)}
+
+
+
+
+
+
+          </ul>
+
+      </nav>
+
+
+
+
+
+
+</div>
+
+
+
+
+
     );
   }
 }

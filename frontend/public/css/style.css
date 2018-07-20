@@ -419,7 +419,7 @@ body.canvas-menu .nav-header {
   padding: 33px 25px;
 }
 body.mini-navbar #page-wrapper {
-  margin: 0 0 0 70px;
+  margin: 0 0 0 0px;
 }
 body.fixed-sidebar.mini-navbar .footer,
 body.canvas-menu.mini-navbar .footer {
@@ -432,7 +432,7 @@ body.canvas-menu.mini-navbar .footer {
 body.fixed-sidebar .navbar-static-side,
 body.canvas-menu .navbar-static-side {
   position: fixed;
-  width: 220px;
+  width: 0px;
   z-index: 2001;
   height: 100%;
 }
@@ -443,10 +443,10 @@ body.fixed-sidebar.mini-navbar #page-wrapper {
   margin: 0 0 0 0;
 }
 body.body-small.fixed-sidebar.mini-navbar #page-wrapper {
-  margin: 0 0 0 220px;
+  margin: 0 0 0 0px;
 }
 body.body-small.fixed-sidebar.mini-navbar .navbar-static-side {
-  width: 220px;
+  width: 0px;
 }
 .fixed-sidebar.mini-navbar .nav li:focus > .nav-second-level,
 .canvas-menu.mini-navbar .nav li:focus > .nav-second-level {
@@ -664,8 +664,8 @@ body.canvas-menu.mini-navbar nav.navbar-static-side {
 .btn-primary:active:hover,
 .btn-primary.active:hover,
 .btn-primary.active:focus {
-  background-color: #081F74;
-  border-color: #081F74;
+  background-color: #5568AA;
+  border-color: #5568AA;
   color: #FFFFFF;
 }
 .btn-primary:active,
@@ -688,8 +688,8 @@ fieldset[disabled] .btn-primary:hover,
 fieldset[disabled] .btn-primary:focus,
 fieldset[disabled] .btn-primary:active,
 fieldset[disabled] .btn-primary.active {
-  background-color: #081F74;
-  border-color: #081F74;
+  background-color: #5568AA;
+  border-color: #5568AA;
 }
 .btn-success {
   background-color: #1c84c6;
@@ -3360,7 +3360,7 @@ body.tour-open .animated {
 }
 .sidebar-content .wrapper,
 .wrapper.sidebar-content {
-  padding-right: 230px !important;
+  padding-right: 20px !important;
 }
 .body-small .sidebar-content .wrapper,
 .body-small .wrapper.sidebar-content {
@@ -3646,7 +3646,7 @@ video {
 @media (min-width: 768px) {
   #page-wrapper {
     position: inherit;
-    margin: 0 0 0 240px;
+    margin: 0 0 0 0px;
     min-height: 2002px;
   }
 }
@@ -4686,11 +4686,12 @@ body.mini-navbar.fixed-sidebar .logo-element {
   width: 15%;
 }
 /* ERROR & LOGIN & LOCKSCREEN*/
-.middle-box {
+/*.middle-box {
   max-width: 400px;
   z-index: 100;
-  margin: 0 auto;
-  padding-top: 40px;
+  margin-left: 20px;
+  padding-top: 20px;
+  padding-bottom:40px;
 }
 .lockscreen.middle-box {
   width: 200px;
@@ -4698,7 +4699,7 @@ body.mini-navbar.fixed-sidebar .logo-element {
 }
 .loginscreen.middle-box {
   width: 300px;
-}
+}*/
 .loginColumns {
   max-width: 800px;
   margin: 0 auto;
@@ -4710,10 +4711,10 @@ body.mini-navbar.fixed-sidebar .logo-element {
   padding: 100px 20px 20px 20px;
 }
 .logo-name {
-  color: #e6e6e6;
-  font-size: 100px;
-  font-weight: 800;
-  letter-spacing: -10px;
+  color: #253EB2;
+  font-size: 50px;
+/*  font-weight: 800;*/
+  letter-spacing: -5px;
   margin-bottom: 0;
 }
 .middle-box h1 {
@@ -7288,8 +7289,8 @@ body.landing-page {
 .landing-page .btn-primary:active,
 .landing-page .btn-primary.active,
 .landing-page .open .dropdown-toggle.btn-primary {
-  background-color: #081F74;
-  border-color: #081F74;
+  background-color: #5568AA;
+  border-color: #5568AA;
   color: #FFFFFF;
 }
 .landing-page .btn-primary:active,
@@ -7312,8 +7313,8 @@ body.landing-page {
 .landing-page fieldset[disabled] .btn-primary:focus,
 .landing-page fieldset[disabled] .btn-primary:active,
 .landing-page fieldset[disabled] .btn-primary.active {
-  background-color: #081F74;
-  border-color: #081F74;
+  background-color: #5568AA;
+  border-color: #5568AA;
 }
 @media (min-width: 768px) {
   .landing-page {
@@ -7427,7 +7428,7 @@ body.rtls {
   /* Theme config */
 }
 body.rtls #page-wrapper {
-  margin: 0 220px 0 0;
+  margin: 0 0px 0 0;
 }
 body.rtls .nav-second-level li a {
   padding: 7px 35px 7px 10px;
@@ -7573,13 +7574,13 @@ body.rtls.top-navigation #page-wrapper {
   margin: 0;
 }
 body.rtls.mini-navbar #page-wrapper {
-  margin: 0 70px 0 0;
+  margin: 0 0px 0 0;
 }
 body.rtls.mini-navbar.fixed-sidebar #page-wrapper {
   margin: 0 0 0 0;
 }
 body.rtls.body-small.fixed-sidebar.mini-navbar #page-wrapper {
-  margin: 0 220px 0 0;
+  margin: 0 0px 0 0;
 }
 body.rtls.body-small.fixed-sidebar.mini-navbar .navbar-static-side {
   width: 220px;
@@ -8420,7 +8421,7 @@ body.md-skin {
   margin: 0 0 0 0;
 }
 .md-skin.body-small.fixed-sidebar.mini-navbar .navbar-static-side {
-  width: 220px;
+  width: 0px;
   background-color: #ffffff;
 }
 .md-skin.boxed-layout #wrapper {
@@ -8436,7 +8437,7 @@ body.md-skin {
 @media (min-width: 768px) {
   #page-wrapper {
     position: inherit;
-    margin: 0 0 0 220px;
+    margin: 0 0 0 0px;
     min-height: 100vh;
   }
   .navbar-static-side {

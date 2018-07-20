@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, browserHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 class SignUpContainer extends Component {
   state = {
@@ -11,18 +11,15 @@ class SignUpContainer extends Component {
   _handleSubmit = (event) => {
     event.preventDefault();
     let { email, password } = this.state;
-
+    try {
       axios
-        .post('http://13.209.141.94/user/signup', { id: email, password })
+        .post('http://13.209.141.94/user/signup ', { id: email, password })
         .then(({ data }) => {
-          if (data.message === 'success') {
-            alert(`고마워요 ${data.result.id}`)
-          }
-        })
-        .then(()=>{this.props.history.push('/');})
-        
-        ;
-
+          console.log(data);
+        });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   _handleChangeName = (event) => {
@@ -39,7 +36,10 @@ class SignUpContainer extends Component {
 
   render () {
     return (
-      <div className="middle-box text-center loginscreen animated fadeInDown">
+      <div className="bodycontain">
+      <div class="container" >
+      <div class="middlecon">
+      <div className="middle-box text-center loginscreen   animated fadeInDown">
         <div>
           <div>
             <h1 className="logo-name">Adthon</h1>
@@ -49,7 +49,7 @@ class SignUpContainer extends Component {
             <div className="form-group">
               <input
                 type="text"
-                className="form-control"
+                className="form-control fbox"
                 autoComplete="false"
                 placeholder="Name"
                 required
@@ -60,7 +60,7 @@ class SignUpContainer extends Component {
             <div className="form-group">
               <input
                 type="email"
-                className="form-control"
+                className="form-control fbox"
                 autoComplete="false"
                 placeholder="Email"
                 required
@@ -71,7 +71,7 @@ class SignUpContainer extends Component {
             <div className="form-group">
               <input
                 type="password"
-                className="form-control"
+                className="form-control fbox"
                 autoComplete="false"
                 placeholder="Password"
                 required
@@ -80,7 +80,7 @@ class SignUpContainer extends Component {
               />
             </div>
 
-            <button type="submit" className="btn btn-primary block full-width m-b" onClick={this._handleSubmit}>
+            <button type="submit" className="btn btn-primary block full-width m-b">
               회원가입
             </button>
 
@@ -96,6 +96,12 @@ class SignUpContainer extends Component {
             <small>AWS AMATHON 1th Team1 &copy; 2018</small>{' '}
           </p>
         </div>
+        </div> 
+        <div class="imgbox">
+        <img src="/rightimg.png"/>
+            </div>
+      </div>
+      </div>
       </div>
     );
   }

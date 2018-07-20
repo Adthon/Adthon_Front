@@ -5,7 +5,7 @@ import Main from './components/Main';
 import SignIn from './components/SignIn';
 import SignUpContainer from './containers/SignUpContainer';
 import axios from 'axios';
-import DBC from './containers/DashboardContainer'
+import DashboardContainer from './containers/DashboardContainer'
 
 class App extends Component {
   state = {
@@ -51,12 +51,14 @@ class App extends Component {
     });
   };
 
+
   render () {
     return (
       <div>
         <Router>
           <React.Fragment>
-            <Route exact path="/" component={DBC} />
+            <MenuLayout user={this.state.user} />
+            <Route exact path="/admin" component={DashboardContainer} />
             <Route
               exact
               path="/signIn"
