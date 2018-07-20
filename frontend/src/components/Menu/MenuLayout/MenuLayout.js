@@ -27,12 +27,14 @@ class MenuLayout extends React.Component {
   }
 
   render () {
-    const { user } = this.props;
+    const { user, isAdmin } = this.props;
+    console.log(isAdmin == true);
     return (
       <div className="MenuLayoutBox" style={{ top: this.state.top }}>
         Logo
         {user ? (
           <span style={{ marginLeft: 'auto' }}>
+            {isAdmin == true ? <Link to="/dashboard">dashboard</Link> : null}
             <span>{user.id}</span>
             <Link to="/logout" className="authBtn">
               logout

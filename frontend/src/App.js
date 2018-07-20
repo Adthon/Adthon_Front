@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import { HashRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import MenuLayout from './components/Menu/MenuLayout';
 import Main from './components/Main';
 import SignIn from './components/SignIn';
 import SignUpContainer from './containers/SignUpContainer';
+import DashboardContainer from './containers/DashboardContainer';
 import axios from 'axios';
 
 class App extends Component {
   state = {
-    redirect: false
+    redirect: false,
+    isAdmin: false
   };
 
   constructor (props) {
@@ -26,11 +28,12 @@ class App extends Component {
     })
       .then((res) => {
         if (res.data.message === 'success') {
-          const { token } = res.data.result;
+          const { token, type } = res.data.result;
           localStorage['jwt_token'] = token;
           this.setState({
             user: res.data.result,
-            redirect: true
+            redirect: true,
+            isAdmin: type
           });
         }
       })
@@ -55,7 +58,7 @@ class App extends Component {
       <div>
         <Router>
           <React.Fragment>
-            <MenuLayout user={this.state.user} />
+            <MenuLayout user={this.state.user} isAdmin={this.state.isAdmin} />
             <Route exact path="/" component={Main} />
             <Route
               path="/signIn"
@@ -68,6 +71,7 @@ class App extends Component {
               )}
             />
             <Route path="/signUp" component={SignUpContainer} />
+            <Route path="/dashboard" component={DashboardContainer} />
             {this.state.redirect ? <Redirect to="/" /> : null}
           </React.Fragment>
         </Router>
