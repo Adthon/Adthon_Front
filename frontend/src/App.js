@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { HashRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import MenuLayout from './components/Menu/MenuLayout';
 import Main from './components/Main';
 import SignIn from './components/SignIn';
 import SignUpContainer from './containers/SignUpContainer';
 import axios from 'axios';
+import DBC from './containers/DashboardContainer'
 
 class App extends Component {
   state = {
@@ -55,9 +56,9 @@ class App extends Component {
       <div>
         <Router>
           <React.Fragment>
-            <MenuLayout user={this.state.user} />
-            <Route exact path="/" component={Main} />
+            <Route exact path="/" component={DBC} />
             <Route
+              exact
               path="/signIn"
               render={(props) => (
                 <SignIn
@@ -67,7 +68,7 @@ class App extends Component {
                 />
               )}
             />
-            <Route path="/signUp" component={SignUpContainer} />
+            <Route exact path="/signUp" component={SignUpContainer} />
             {this.state.redirect ? <Redirect to="/" /> : null}
           </React.Fragment>
         </Router>

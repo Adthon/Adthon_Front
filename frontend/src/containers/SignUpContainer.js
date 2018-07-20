@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, browserHistory } from 'react-router-dom';
 import axios from 'axios';
 class SignUpContainer extends Component {
   state = {
@@ -11,15 +11,18 @@ class SignUpContainer extends Component {
   _handleSubmit = (event) => {
     event.preventDefault();
     let { email, password } = this.state;
-    try {
+
       axios
-        .post('http://13.209.141.94/user/signup ', { id: email, password })
+        .post('http://13.209.141.94/user/signup', { id: email, password })
         .then(({ data }) => {
-          console.log(data);
-        });
-    } catch (error) {
-      console.log(error);
-    }
+          if (data.message === 'success') {
+            alert(`고마워요 ${data.result.id}`)
+          }
+        })
+        .then(()=>{this.props.history.push('/');})
+        
+        ;
+
   };
 
   _handleChangeName = (event) => {
@@ -36,7 +39,7 @@ class SignUpContainer extends Component {
 
   render () {
     return (
-      <div className="middle-box text-center loginscreen   animated fadeInDown">
+      <div className="middle-box text-center loginscreen animated fadeInDown">
         <div>
           <div>
             <h1 className="logo-name">Adthon</h1>
@@ -77,7 +80,7 @@ class SignUpContainer extends Component {
               />
             </div>
 
-            <button type="submit" className="btn btn-primary block full-width m-b">
+            <button type="submit" className="btn btn-primary block full-width m-b" onClick={this._handleSubmit}>
               회원가입
             </button>
 
