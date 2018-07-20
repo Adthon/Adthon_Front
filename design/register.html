@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>INSPINIA | Register</title>
+    <title>Adthon | Register</title>
 
 
      <script
@@ -14,47 +14,70 @@
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    
+
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
 
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
 
 </head>
 
-<body class="gray-bg">
-
-    <div class="middle-box text-center loginscreen   animated fadeInDown">
-        <div>
-            <div>
-
-                <h1 class="logo-name">Adthon</h1>
-
+<body>
+    <div class="bodycontain">
+        <nav class="navbar navbar-static-top lognav" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">Adthon</a>
             </div>
-         <!--    <h3>Register to Adthon</h3> -->
-            <p>새로운 계정 만들기</p><br>
-            <form class="m-t" role="form" action="login.html">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Name" required="">
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Email" required="">
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Password" required="">
-                </div>
-            <!--     <div class="form-group">
-                        <div class="checkbox i-checks"><label> <input type="checkbox"><i></i>정책동의</label></div>
-                </div> -->
-                <button type="submit" class="btn btn-primary block full-width m-b">회원가입</button>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <span class="m-r-sm text-muted welcome-message">Welcom!</span>
+                    </li>
+                    <li>
+                        <a href="login.html">
+                            <i class="fa fa-sign-in"></i> 로그인
+                        </a>
+                    </li>
+                </ul>
+        </nav>
 
-                <p class="text-muted text-center"><small>이미 계정이 있으신가요?</small></p>
-                <a class="btn btn-sm btn-white btn-block" href="login.html">로그인</a>
-            </form>
-            <p class="m-t"> <small>AWS AMATHON 1th Team1 &copy; 2018</small> </p>
+        <div class="container" >
+
+            <div class="middle-box text-center loginscreen   animated fadeInDown">
+                <div>
+                    <div>
+
+                        <h1 class="logo-name">Adthon</h1>
+
+                    </div>
+                    <p>새로운 계정 만들기</p><br>
+                    <form class="m-t" role="form" action="login.html">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Name" required="" style="background:none;border:none;border-bottom: 1px solid rgba(0,0,50, .3);">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" required="" style="background:none;border:none;border-bottom: 1px solid rgba(0,0,50, .3);">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Password" required="" style="background:none;border:none;border-bottom: 1px solid rgba(0,0,50, .3);">
+                        </div>
+                    <!--     <div class="form-group">
+                                <div class="checkbox i-checks"><label> <input type="checkbox"><i></i>정책동의</label></div>
+                        </div> -->
+                        <button type="submit" class="btn btn-primary block full-width m-b"  style="box-shadow: 0 10px 18px rgba(0,0,0,0.25), 0 5px 8px rgba(0,0,0,0.22);">회원가입</button>
+
+                        <p class="text-muted text-center"><small>이미 계정이 있으신가요?</small></p>
+                        <a class="btn btn-sm btn-white btn-block" href="login.html">로그인</a>
+                    </form>
+                    <p class="m-t"> <small>AWS AMATHON 1th Team1 &copy; 2018</small> </p>
+                </div>
+            </div>
+               <div class="imgbox">
+        <img src="rightimg.png">
+            </div>
         </div>
-    </div>
+</div>
 
     <!-- Mainly scripts -->
 
