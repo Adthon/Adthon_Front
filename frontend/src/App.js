@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { HashRouter as Router, Route } from 'react-router-dom';
+import MenuContainer from './containers/MenuContainer';
+import MainPage from './pages/MainPage';
 
 class App extends Component {
-  render() {
+  render () {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Router>
+        <React.Fragment>
+          <MenuContainer />
+          <Route path="/signIn" component={MenuContainer} />
+          <Route path="/signUp" component={MenuContainer} />
+          <Route path="/signUp" component={MainPage} />
+        </React.Fragment>
+      </Router>
     );
   }
 }
