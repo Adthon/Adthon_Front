@@ -5,20 +5,8 @@ import './SignIn.css';
 class SignIn extends React.Component {
   state = {};
 
-  onEmailChangeHandler = (e) => {
-    this.setState({
-      email: e.target.value
-    });
-  };
-  onPasswordChangeHandler = (e) => {
-    this.setState({
-      password: e.target.value
-    });
-  };
-
   render () {
-    console.log(this.state);
-    const { doLogin } = this.props;
+    const { doLogin, onEmailChangeHandler, onPasswordChangeHandler } = this.props;
     return (
       <div class="middle-box text-center loginscreen animated fadeInDown">
         <div>
@@ -28,14 +16,14 @@ class SignIn extends React.Component {
           <h3 />
           <p>사용자 광고클릭 및 노출 이벤트 추적 대시보드</p>
           <h3>로그인</h3>
-          <form class="m-t" role="form" action="index.html">
+          <div class="m-t">
             <div class="form-group">
               <input
                 type="email"
                 class="form-control"
                 placeholder="Username"
                 required="true"
-                onChange={this.onEmailChangeHandler}
+                onChange={onEmailChangeHandler}
               />
             </div>
             <div class="form-group">
@@ -44,10 +32,14 @@ class SignIn extends React.Component {
                 class="form-control"
                 placeholder="Password"
                 required="true"
-                onChange={this.onPasswordChangeHandler}
+                onChange={onPasswordChangeHandler}
               />
             </div>
-            <button type="submit" class="btn btn-primary block full-width m-b">
+            <button
+              type="submit"
+              class="btn btn-primary block full-width m-b"
+              onClick={() => doLogin()}
+            >
               로그인
             </button>
 
@@ -60,7 +52,7 @@ class SignIn extends React.Component {
             <Link class="btn btn-sm btn-white btn-block" to="/signUp">
               회원가입하기
             </Link>
-          </form>
+          </div>
           <p class="m-t">
             {' '}
             <small>AWS AMATHON 1th Team1 &copy; 2018</small>{' '}

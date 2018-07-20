@@ -5,9 +5,11 @@ class MenuContainer extends Component {
   state = {};
 
   render () {
+    console.log(this.props);
     return (
       <MenuLayoutBox>
         <p>asdr</p>
+        <p>asdfasdfasdf</p>
       </MenuLayoutBox>
     );
   }
