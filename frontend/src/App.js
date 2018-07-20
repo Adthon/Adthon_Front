@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route, Redirect } from 'react-router-dom';
 import MenuLayout from './components/Menu/MenuLayout';
-import MainPage from './pages/MainPage';
+import Main from './components/Main';
 import SignIn from './components/SignIn';
+import SignUpContainer from './containers/SignUpContainer';
 import axios from 'axios';
 
 class App extends Component {
-  state = {};
+  state = {
+    redirect: false
+  };
 
   constructor (props) {
     super(props);
   }
 
   onLoginEvent = () => {
-    console.log(this.state);
     axios({
       method: 'post',
       url: 'http://13.209.141.94/user/signin',
@@ -23,12 +25,12 @@ class App extends Component {
       }
     })
       .then((res) => {
-        console.log(res);
-        console.log(res.data.message);
         if (res.data.message === 'success') {
-          console.log(res.data);
+          const { token } = res.data.result;
+          localStorage['jwt_token'] = token;
           this.setState({
-            user: res.data.result
+            user: res.data.result,
+            redirect: true
           });
         }
       })
@@ -50,22 +52,26 @@ class App extends Component {
 
   render () {
     return (
-      <Router>
-        <React.Fragment>
-          <MenuLayout user={this.state.user} />
-          <Route
-            path="/signIn"
-            render={(props) => (
-              <SignIn
-                doLogin={(user) => this.onLoginEvent(user)}
-                onEmailChangeHandler={this.onEmailChangeHandler}
-                onPasswordChangeHandler={this.onPasswordChangeHandler}
-              />
-            )}
-          />
-          {/* <Route path="/signUp" component={MenuContainer} /> */}
-        </React.Fragment>
-      </Router>
+      <div>
+        <Router>
+          <React.Fragment>
+            <MenuLayout user={this.state.user} />
+            <Route exact path="/" component={Main} />
+            <Route
+              path="/signIn"
+              render={(props) => (
+                <SignIn
+                  doLogin={(user) => this.onLoginEvent(user)}
+                  onEmailChangeHandler={this.onEmailChangeHandler}
+                  onPasswordChangeHandler={this.onPasswordChangeHandler}
+                />
+              )}
+            />
+            <Route path="/signUp" component={SignUpContainer} />
+            {this.state.redirect ? <Redirect to="/" /> : null}
+          </React.Fragment>
+        </Router>
+      </div>
     );
   }
 }

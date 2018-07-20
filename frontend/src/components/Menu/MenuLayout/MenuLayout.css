@@ -6,10 +6,11 @@
   width: 100vw;
   display: flex;
   align-items: center;
-  top: 0;
   left: 0;
+  box-shadow: 2px 2px 2px #1B1C21;
 }
 
-.loginBtn{
+.authBtn{
   margin-left: auto;
+  color: white;
 }
