@@ -4,12 +4,14 @@ import MenuLayout from './components/Menu/MenuLayout';
 import Main from './components/Main';
 import SignIn from './components/SignIn';
 import SignUpContainer from './containers/SignUpContainer';
+import DashboardContainer from './containers/DashboardContainer';
 import axios from 'axios';
-import DashboardContainer from './containers/DashboardContainer'
+
 
 class App extends Component {
   state = {
-    redirect: false
+    redirect: false,
+    isAdmin: false
   };
 
   constructor (props) {
@@ -27,11 +29,12 @@ class App extends Component {
     })
       .then((res) => {
         if (res.data.message === 'success') {
-          const { token } = res.data.result;
+          const { token, type } = res.data.result;
           localStorage['jwt_token'] = token;
           this.setState({
             user: res.data.result,
-            redirect: true
+            redirect: true,
+            isAdmin: type
           });
         }
       })
@@ -59,6 +62,7 @@ class App extends Component {
           <React.Fragment>
             <MenuLayout user={this.state.user} />
             <Route exact path="/admin" component={DashboardContainer} />
+
             <Route
               exact
               path="/signIn"
@@ -70,7 +74,9 @@ class App extends Component {
                 />
               )}
             />
+
             <Route exact path="/signUp" component={SignUpContainer} />
+
             {this.state.redirect ? <Redirect to="/" /> : null}
           </React.Fragment>
         </Router>

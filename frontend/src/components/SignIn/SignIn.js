@@ -20,9 +20,11 @@ class SignIn extends React.Component {
           </div>
          
           <p>사용자 광고클릭 및 노출 이벤트 추적 대시보드</p>
+
           <br/>
+
           <h3>로그인</h3>
-          <div class="m-t">
+          <div class="m-t" role="form" action="index.html">
             <div class="form-group">
               <input
                 type="email"
@@ -55,7 +57,10 @@ class SignIn extends React.Component {
             <p class="text-muted text-center">
               <small>아직 회원이 아니신가요?</small>
             </p>
+
             <Link class="btn btn-sm btn-white btn-block " to="/signUp">
+
+    
               회원가입하기
             </Link>
           </div>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import { Link, browserHistory } from 'react-router-dom';
 import axios from 'axios';
 class SignUpContainer extends Component {
@@ -171,5 +172,6 @@ render () {
 }
 
 export default SignUpContainer;
+
 
 

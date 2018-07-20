@@ -11,15 +11,14 @@ class SignUpContainer extends Component {
   _handleSubmit = (event) => {
     event.preventDefault();
     let { email, password } = this.state;
-    try {
-      axios
-        .post('http://13.209.141.94/user/signup ', { id: email, password })
-        .then(({ data }) => {
-          console.log(data);
-        });
-    } catch (error) {
-      console.log(error);
-    }
+    axios
+      .post('http://13.209.141.94/user/signup ', { id: email, password })
+      .then(({ data }) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   _handleChangeName = (event) => {
@@ -80,7 +79,10 @@ class SignUpContainer extends Component {
               />
             </div>
 
-            <button type="submit" className="btn btn-primary block full-width m-b">
+            <button
+              onClick={this._handleSubmit}
+              className="btn btn-primary block full-width m-b"
+            >
               회원가입
             </button>
 

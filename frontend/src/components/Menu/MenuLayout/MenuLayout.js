@@ -27,7 +27,8 @@ class MenuLayout extends React.Component {
   }
 
   render () {
-    const { user } = this.props;
+    const { user, isAdmin } = this.props;
+    console.log(isAdmin == true);
     return (
 
 <div className="bodycontain_nav">
@@ -69,6 +70,7 @@ class MenuLayout extends React.Component {
 
 
 </div>
+
 
 
 
